@@ -1,0 +1,123 @@
+.sbcpa_wrapper-popup{
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, .2);
+    height: 100vh;
+    z-index: 9999999;
+    animation-name: fade;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+
+.sbpca_container-inner{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1rem 2rem;
+    background-color: white;
+    width: 450px;
+    float: right;
+    height: calc(100% - 2rem);
+    animation-name: open;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+
+.sbpca_container-inner .sbpca_header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.sbpca_container-inner .sbpca_header .sbpca_header-title{
+    font-family: sans-serif;
+    font-size: 2rem;
+    color: gray;
+    margin: 0;
+}
+.sbpca_header #close-popup-cart{
+    font-size: 1.5rem;
+    color: gray;
+    cursor: pointer;
+}
+
+.sbpca_container-inner .sbpca_footer{
+    display: flex;
+    justify-content: center ;
+    gap: 1.5rem;
+}
+.sbpca_container-inner .sbpca_footer .sbpca_footer-actions{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 0;
+    font-weight: 400;
+    font-size: 1rem;
+    color: white;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.sbpca_cart_subtotal{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.sbpca_cart_subtotal > div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.sbpca_content{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+    overflow: hidden;
+}
+.sbpca_content ul.cart{
+    margin: 0;
+    padding: 0;
+    height: 90%;
+    overflow-y: auto;
+}
+.sbpca_content ul.cart li.cart-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+}
+.sbpca_content ul.cart li.cart-item .attachment-woocommerce_thumbnail{
+    width: 100px;
+    height: auto;
+}
+.sbpca_content ul.cart li.cart-item .cart-item-info{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@keyframes open{
+    from{
+        transform: translateX(calc(100% + 450px));
+    }
+    to{
+        transform: translateX(0);
+    }
+}
+
+@keyframes fade{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
